@@ -16,6 +16,12 @@ def get_random_cafe():
     #     data = json.load(f)
     return jsonify(samples)
 
+@app.route("/api/samples", methods=["GET"])
+def get_data():
+    with open('samples.json') as f:
+        data = json.load(f)
+    return jsonify(data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
